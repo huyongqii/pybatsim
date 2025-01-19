@@ -1,0 +1,3 @@
+"time";"level";"processed_jobs";"open_jobs";"type";"message";"data"
+0;2;0;0;"simulation_begins_received";"Simulation begins";"{}"
+0.0;2;0;0;"resources_registered";"9 resources registered";"{'num_resources': 9}"

@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "pybatsim"
+version = "3.2.1"
+description = "Python API and schedulers for Batsim"
+readme = "README.rst"
+keywords = [
+  "scheduler",
+  "simulation",
+]
+repository = "https://gitlab.inria.fr/batsim/pybatsim"
+authors = [
+  "Henri Casanova <henric@hawaii.edu>",
+  "Pierre-François Dutot <pfdutot@imag.fr>",
+  "David Glesser <david.glesser@imag.fr>",
+  "Steffen Lackner <lackner@cs.tu-darmstadt.de>",
+  "Michael Mercier <michael.mercier@inria.fr>",
+  "Clément Mommessin <clement.mommessin@inria.fr>",
+  "Millian Poquet <millian.poquet@inria.fr>",
+  "Olivier Richard <olivier.richard@imag.fr>",
+]
+maintainers = [
+  "Raphaël Bleuse <raphael.bleuse@inria.fr>",
+]
+license = "LGPL-3.0-only"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering",
+  "Topic :: System :: Distributed Computing",
+]
+packages = [
+  {include = "batsim"},
+  {include = "schedulers"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.7.1"
+procset = "^1.0"
+sortedcontainers = "^2.3.0"
+pyzmq = "^22.0.3"
+docopt = "^0.6.2"
+importlib-metadata = {version = ">=1.0", python = "<3.8"}
+pandas = {version = "^1.3.4", optional = true}
+
+[tool.poetry.dev-dependencies]
+coverage = "^6.2"
+Sphinx = "^4.3.1"
+
+[tool.poetry.extras]
+tools = ["pandas"]
+
+[tool.poetry.scripts]
+pybatsim = "batsim.cmds.launcher:main"
+pybatsim-experiment = "batsim.cmds.experiments:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
